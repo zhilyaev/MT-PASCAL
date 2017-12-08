@@ -1,22 +1,25 @@
 import sys
 from antlr4 import *
-from HelloLexer import HelloLexer
-from HelloParser import HelloParser
-from HelloListener import HelloListener
+from PascalLexer import PascalLexer
+from PascalParser import PascalParser
+from PascalListener import PascalListener
 
-class HelloPrintListener(HelloListener):
+
+class PascalPrintListener(PascalListener):
     def enterHi(self, ctx):
-        print("Hello: %s" % ctx.ID())
+        print("-> %s" % ctx.ID())
+
 
 def main():
-    input = FileStream("test/test.txt")
-    lexer = HelloLexer(input)
+    input = FileStream(sys.argv[1])
+    lexer = PascalLexer(input)
     stream = CommonTokenStream(lexer)
-    parser = HelloParser(stream)
-    tree = parser.hi()
-    printer = HelloPrintListener()
+    parser = PascalParser(stream)
+    tree = parser.program()
+    printer = PascalPrintListener()
     walker = ParseTreeWalker()
     walker.walk(printer, tree)
+
 
 if __name__ == '__main__':
     main()
