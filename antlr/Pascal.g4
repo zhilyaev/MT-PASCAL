@@ -3,8 +3,6 @@ grammar Pascal;
 
 @members {
 globalVars = {}  # ID : TYPE
-procedures = {}  # ID : LINE
-args = {}
 lastType = ''
 }
 
@@ -14,7 +12,6 @@ program : 'program ' ID mb
             'begin'
                 body
             'end.'
-            {print(self.procedures)}
           ;
     decl:
         | var_decl decl
@@ -26,7 +23,10 @@ program : 'program ' ID mb
         ;
         var_decl: 'var ' ID ':'  STD_TYPE_NAME mb
 {
-self.globalVars[$ID.text] = $STD_TYPE_NAME.text
+if $ID.text not in self.globalVars:
+    self.globalVars[$ID.text] = $STD_TYPE_NAME.text
+else:
+    sys.stderr.write('Строка №'+str($ID.line)+': Палехче ID='+$ID.text+' уже исползуется\n');
 };
 
     procedure_decl: 'procedure ' ID '(' args_decl ')' mb
@@ -35,7 +35,7 @@ self.globalVars[$ID.text] = $STD_TYPE_NAME.text
                         body
                     'end' mb
 {
-self.procedures[$ID.text] = $ID.line
+self.globalVars[$ID.text] = 'VOID'
 };
     args_decl:
         | arg_decl args_decl
@@ -60,8 +60,11 @@ body :
 
 assign : ID ':=' expression mb
 {
-if (self.globalVars[$ID.text] != self.lastType):
-    sys.stderr.write('Строка №'+str($ID.line)+' Неверный тип '+$ID.text+'\n')
+if $ID.text in self.globalVars:
+    if (self.globalVars[$ID.text] != self.lastType):
+        sys.stderr.write('Строка №'+str($ID.line)+': Неверный тип '+$ID.text+'\n')
+else:
+    sys.stderr.write('Строка №'+str($ID.line)+': Необъявленный ID='+$ID.text+'\n');
 };
 call: ID '(' args_list ')' mb;
     args_list: arg args;
@@ -99,7 +102,7 @@ MUL_OP : '*' | '/' | 'and';
 ADD_OP : '+'|'-'|'or';
 REL_OP : '<'| '>' | '=' | '<>' | '>=' | '<=';
 STD_TYPE_NAME : 'integer' | 'boolean' | 'real' | 'string' | 'character' ;
-INTEGER : '1'..'9' (DIGIT)*;
+INTEGER : ('1'..'9' (DIGIT)*) | '0';
 CHAR : '\'' LETTER '\'';
 BOOL : 'true' | 'false';
 STRING :'"' .*? '"' ;
