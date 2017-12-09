@@ -53,12 +53,12 @@ class PascalListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by PascalParser#NEW_PROCEDURE.
-    def enterNEW_PROCEDURE(self, ctx:PascalParser.NEW_PROCEDUREContext):
+    # Enter a parse tree produced by PascalParser#procedure_decl.
+    def enterProcedure_decl(self, ctx:PascalParser.Procedure_declContext):
         pass
 
-    # Exit a parse tree produced by PascalParser#NEW_PROCEDURE.
-    def exitNEW_PROCEDURE(self, ctx:PascalParser.NEW_PROCEDUREContext):
+    # Exit a parse tree produced by PascalParser#procedure_decl.
+    def exitProcedure_decl(self, ctx:PascalParser.Procedure_declContext):
         pass
 
 
