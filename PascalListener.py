@@ -8,6 +8,15 @@ else:
 # This class defines a complete listener for a parse tree produced by PascalParser.
 class PascalListener(ParseTreeListener):
 
+    # Enter a parse tree produced by PascalParser#r.
+    def enterR(self, ctx:PascalParser.RContext):
+        pass
+
+    # Exit a parse tree produced by PascalParser#r.
+    def exitR(self, ctx:PascalParser.RContext):
+        pass
+
+
     # Enter a parse tree produced by PascalParser#program.
     def enterProgram(self, ctx:PascalParser.ProgramContext):
         pass
@@ -17,534 +26,147 @@ class PascalListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by PascalParser#programHeading.
-    def enterProgramHeading(self, ctx:PascalParser.ProgramHeadingContext):
+    # Enter a parse tree produced by PascalParser#decl.
+    def enterDecl(self, ctx:PascalParser.DeclContext):
         pass
 
-    # Exit a parse tree produced by PascalParser#programHeading.
-    def exitProgramHeading(self, ctx:PascalParser.ProgramHeadingContext):
+    # Exit a parse tree produced by PascalParser#decl.
+    def exitDecl(self, ctx:PascalParser.DeclContext):
         pass
 
 
-    # Enter a parse tree produced by PascalParser#identifier.
-    def enterIdentifier(self, ctx:PascalParser.IdentifierContext):
+    # Enter a parse tree produced by PascalParser#vars_decl.
+    def enterVars_decl(self, ctx:PascalParser.Vars_declContext):
         pass
 
-    # Exit a parse tree produced by PascalParser#identifier.
-    def exitIdentifier(self, ctx:PascalParser.IdentifierContext):
+    # Exit a parse tree produced by PascalParser#vars_decl.
+    def exitVars_decl(self, ctx:PascalParser.Vars_declContext):
         pass
 
 
-    # Enter a parse tree produced by PascalParser#block.
-    def enterBlock(self, ctx:PascalParser.BlockContext):
+    # Enter a parse tree produced by PascalParser#var_decl.
+    def enterVar_decl(self, ctx:PascalParser.Var_declContext):
         pass
 
-    # Exit a parse tree produced by PascalParser#block.
-    def exitBlock(self, ctx:PascalParser.BlockContext):
+    # Exit a parse tree produced by PascalParser#var_decl.
+    def exitVar_decl(self, ctx:PascalParser.Var_declContext):
         pass
 
 
-    # Enter a parse tree produced by PascalParser#usesUnitsPart.
-    def enterUsesUnitsPart(self, ctx:PascalParser.UsesUnitsPartContext):
+    # Enter a parse tree produced by PascalParser#NEW_PROCEDURE.
+    def enterNEW_PROCEDURE(self, ctx:PascalParser.NEW_PROCEDUREContext):
         pass
 
-    # Exit a parse tree produced by PascalParser#usesUnitsPart.
-    def exitUsesUnitsPart(self, ctx:PascalParser.UsesUnitsPartContext):
+    # Exit a parse tree produced by PascalParser#NEW_PROCEDURE.
+    def exitNEW_PROCEDURE(self, ctx:PascalParser.NEW_PROCEDUREContext):
         pass
 
 
-    # Enter a parse tree produced by PascalParser#labelDeclarationPart.
-    def enterLabelDeclarationPart(self, ctx:PascalParser.LabelDeclarationPartContext):
+    # Enter a parse tree produced by PascalParser#args_decl.
+    def enterArgs_decl(self, ctx:PascalParser.Args_declContext):
         pass
 
-    # Exit a parse tree produced by PascalParser#labelDeclarationPart.
-    def exitLabelDeclarationPart(self, ctx:PascalParser.LabelDeclarationPartContext):
+    # Exit a parse tree produced by PascalParser#args_decl.
+    def exitArgs_decl(self, ctx:PascalParser.Args_declContext):
         pass
 
 
-    # Enter a parse tree produced by PascalParser#label.
-    def enterLabel(self, ctx:PascalParser.LabelContext):
+    # Enter a parse tree produced by PascalParser#arg_decl.
+    def enterArg_decl(self, ctx:PascalParser.Arg_declContext):
         pass
 
-    # Exit a parse tree produced by PascalParser#label.
-    def exitLabel(self, ctx:PascalParser.LabelContext):
+    # Exit a parse tree produced by PascalParser#arg_decl.
+    def exitArg_decl(self, ctx:PascalParser.Arg_declContext):
         pass
 
 
-    # Enter a parse tree produced by PascalParser#constantDefinitionPart.
-    def enterConstantDefinitionPart(self, ctx:PascalParser.ConstantDefinitionPartContext):
+    # Enter a parse tree produced by PascalParser#body.
+    def enterBody(self, ctx:PascalParser.BodyContext):
         pass
 
-    # Exit a parse tree produced by PascalParser#constantDefinitionPart.
-    def exitConstantDefinitionPart(self, ctx:PascalParser.ConstantDefinitionPartContext):
+    # Exit a parse tree produced by PascalParser#body.
+    def exitBody(self, ctx:PascalParser.BodyContext):
         pass
 
 
-    # Enter a parse tree produced by PascalParser#constantDefinition.
-    def enterConstantDefinition(self, ctx:PascalParser.ConstantDefinitionContext):
+    # Enter a parse tree produced by PascalParser#simple_body.
+    def enterSimple_body(self, ctx:PascalParser.Simple_bodyContext):
         pass
 
-    # Exit a parse tree produced by PascalParser#constantDefinition.
-    def exitConstantDefinition(self, ctx:PascalParser.ConstantDefinitionContext):
+    # Exit a parse tree produced by PascalParser#simple_body.
+    def exitSimple_body(self, ctx:PascalParser.Simple_bodyContext):
         pass
 
 
-    # Enter a parse tree produced by PascalParser#constantChr.
-    def enterConstantChr(self, ctx:PascalParser.ConstantChrContext):
+    # Enter a parse tree produced by PascalParser#b_if.
+    def enterB_if(self, ctx:PascalParser.B_ifContext):
         pass
 
-    # Exit a parse tree produced by PascalParser#constantChr.
-    def exitConstantChr(self, ctx:PascalParser.ConstantChrContext):
+    # Exit a parse tree produced by PascalParser#b_if.
+    def exitB_if(self, ctx:PascalParser.B_ifContext):
         pass
 
 
-    # Enter a parse tree produced by PascalParser#constant.
-    def enterConstant(self, ctx:PascalParser.ConstantContext):
+    # Enter a parse tree produced by PascalParser#b_for.
+    def enterB_for(self, ctx:PascalParser.B_forContext):
         pass
 
-    # Exit a parse tree produced by PascalParser#constant.
-    def exitConstant(self, ctx:PascalParser.ConstantContext):
+    # Exit a parse tree produced by PascalParser#b_for.
+    def exitB_for(self, ctx:PascalParser.B_forContext):
         pass
 
 
-    # Enter a parse tree produced by PascalParser#unsignedNumber.
-    def enterUnsignedNumber(self, ctx:PascalParser.UnsignedNumberContext):
+    # Enter a parse tree produced by PascalParser#b_while.
+    def enterB_while(self, ctx:PascalParser.B_whileContext):
         pass
 
-    # Exit a parse tree produced by PascalParser#unsignedNumber.
-    def exitUnsignedNumber(self, ctx:PascalParser.UnsignedNumberContext):
+    # Exit a parse tree produced by PascalParser#b_while.
+    def exitB_while(self, ctx:PascalParser.B_whileContext):
         pass
 
 
-    # Enter a parse tree produced by PascalParser#unsignedInteger.
-    def enterUnsignedInteger(self, ctx:PascalParser.UnsignedIntegerContext):
+    # Enter a parse tree produced by PascalParser#assign.
+    def enterAssign(self, ctx:PascalParser.AssignContext):
         pass
 
-    # Exit a parse tree produced by PascalParser#unsignedInteger.
-    def exitUnsignedInteger(self, ctx:PascalParser.UnsignedIntegerContext):
+    # Exit a parse tree produced by PascalParser#assign.
+    def exitAssign(self, ctx:PascalParser.AssignContext):
         pass
 
 
-    # Enter a parse tree produced by PascalParser#unsignedReal.
-    def enterUnsignedReal(self, ctx:PascalParser.UnsignedRealContext):
+    # Enter a parse tree produced by PascalParser#call.
+    def enterCall(self, ctx:PascalParser.CallContext):
         pass
 
-    # Exit a parse tree produced by PascalParser#unsignedReal.
-    def exitUnsignedReal(self, ctx:PascalParser.UnsignedRealContext):
+    # Exit a parse tree produced by PascalParser#call.
+    def exitCall(self, ctx:PascalParser.CallContext):
         pass
 
 
-    # Enter a parse tree produced by PascalParser#sign.
-    def enterSign(self, ctx:PascalParser.SignContext):
+    # Enter a parse tree produced by PascalParser#args_list.
+    def enterArgs_list(self, ctx:PascalParser.Args_listContext):
         pass
 
-    # Exit a parse tree produced by PascalParser#sign.
-    def exitSign(self, ctx:PascalParser.SignContext):
+    # Exit a parse tree produced by PascalParser#args_list.
+    def exitArgs_list(self, ctx:PascalParser.Args_listContext):
         pass
 
 
-    # Enter a parse tree produced by PascalParser#string.
-    def enterString(self, ctx:PascalParser.StringContext):
+    # Enter a parse tree produced by PascalParser#args.
+    def enterArgs(self, ctx:PascalParser.ArgsContext):
         pass
 
-    # Exit a parse tree produced by PascalParser#string.
-    def exitString(self, ctx:PascalParser.StringContext):
+    # Exit a parse tree produced by PascalParser#args.
+    def exitArgs(self, ctx:PascalParser.ArgsContext):
         pass
 
 
-    # Enter a parse tree produced by PascalParser#typeDefinitionPart.
-    def enterTypeDefinitionPart(self, ctx:PascalParser.TypeDefinitionPartContext):
+    # Enter a parse tree produced by PascalParser#arg.
+    def enterArg(self, ctx:PascalParser.ArgContext):
         pass
 
-    # Exit a parse tree produced by PascalParser#typeDefinitionPart.
-    def exitTypeDefinitionPart(self, ctx:PascalParser.TypeDefinitionPartContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#typeDefinition.
-    def enterTypeDefinition(self, ctx:PascalParser.TypeDefinitionContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#typeDefinition.
-    def exitTypeDefinition(self, ctx:PascalParser.TypeDefinitionContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#functionType.
-    def enterFunctionType(self, ctx:PascalParser.FunctionTypeContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#functionType.
-    def exitFunctionType(self, ctx:PascalParser.FunctionTypeContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#procedureType.
-    def enterProcedureType(self, ctx:PascalParser.ProcedureTypeContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#procedureType.
-    def exitProcedureType(self, ctx:PascalParser.ProcedureTypeContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#type_st.
-    def enterType_st(self, ctx:PascalParser.Type_stContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#type_st.
-    def exitType_st(self, ctx:PascalParser.Type_stContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#simpleType.
-    def enterSimpleType(self, ctx:PascalParser.SimpleTypeContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#simpleType.
-    def exitSimpleType(self, ctx:PascalParser.SimpleTypeContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#scalarType.
-    def enterScalarType(self, ctx:PascalParser.ScalarTypeContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#scalarType.
-    def exitScalarType(self, ctx:PascalParser.ScalarTypeContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#subrangeType.
-    def enterSubrangeType(self, ctx:PascalParser.SubrangeTypeContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#subrangeType.
-    def exitSubrangeType(self, ctx:PascalParser.SubrangeTypeContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#typeIdentifier.
-    def enterTypeIdentifier(self, ctx:PascalParser.TypeIdentifierContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#typeIdentifier.
-    def exitTypeIdentifier(self, ctx:PascalParser.TypeIdentifierContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#structuredType.
-    def enterStructuredType(self, ctx:PascalParser.StructuredTypeContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#structuredType.
-    def exitStructuredType(self, ctx:PascalParser.StructuredTypeContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#unpackedStructuredType.
-    def enterUnpackedStructuredType(self, ctx:PascalParser.UnpackedStructuredTypeContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#unpackedStructuredType.
-    def exitUnpackedStructuredType(self, ctx:PascalParser.UnpackedStructuredTypeContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#stringtype.
-    def enterStringtype(self, ctx:PascalParser.StringtypeContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#stringtype.
-    def exitStringtype(self, ctx:PascalParser.StringtypeContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#arrayType.
-    def enterArrayType(self, ctx:PascalParser.ArrayTypeContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#arrayType.
-    def exitArrayType(self, ctx:PascalParser.ArrayTypeContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#typeList.
-    def enterTypeList(self, ctx:PascalParser.TypeListContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#typeList.
-    def exitTypeList(self, ctx:PascalParser.TypeListContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#indexType.
-    def enterIndexType(self, ctx:PascalParser.IndexTypeContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#indexType.
-    def exitIndexType(self, ctx:PascalParser.IndexTypeContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#componentType.
-    def enterComponentType(self, ctx:PascalParser.ComponentTypeContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#componentType.
-    def exitComponentType(self, ctx:PascalParser.ComponentTypeContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#recordType.
-    def enterRecordType(self, ctx:PascalParser.RecordTypeContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#recordType.
-    def exitRecordType(self, ctx:PascalParser.RecordTypeContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#fieldList.
-    def enterFieldList(self, ctx:PascalParser.FieldListContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#fieldList.
-    def exitFieldList(self, ctx:PascalParser.FieldListContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#fixedPart.
-    def enterFixedPart(self, ctx:PascalParser.FixedPartContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#fixedPart.
-    def exitFixedPart(self, ctx:PascalParser.FixedPartContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#recordSection.
-    def enterRecordSection(self, ctx:PascalParser.RecordSectionContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#recordSection.
-    def exitRecordSection(self, ctx:PascalParser.RecordSectionContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#variantPart.
-    def enterVariantPart(self, ctx:PascalParser.VariantPartContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#variantPart.
-    def exitVariantPart(self, ctx:PascalParser.VariantPartContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#tag.
-    def enterTag(self, ctx:PascalParser.TagContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#tag.
-    def exitTag(self, ctx:PascalParser.TagContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#variant.
-    def enterVariant(self, ctx:PascalParser.VariantContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#variant.
-    def exitVariant(self, ctx:PascalParser.VariantContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#setType.
-    def enterSetType(self, ctx:PascalParser.SetTypeContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#setType.
-    def exitSetType(self, ctx:PascalParser.SetTypeContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#baseType.
-    def enterBaseType(self, ctx:PascalParser.BaseTypeContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#baseType.
-    def exitBaseType(self, ctx:PascalParser.BaseTypeContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#fileType.
-    def enterFileType(self, ctx:PascalParser.FileTypeContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#fileType.
-    def exitFileType(self, ctx:PascalParser.FileTypeContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#pointerType.
-    def enterPointerType(self, ctx:PascalParser.PointerTypeContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#pointerType.
-    def exitPointerType(self, ctx:PascalParser.PointerTypeContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#variableDeclarationPart.
-    def enterVariableDeclarationPart(self, ctx:PascalParser.VariableDeclarationPartContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#variableDeclarationPart.
-    def exitVariableDeclarationPart(self, ctx:PascalParser.VariableDeclarationPartContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#variableDeclaration.
-    def enterVariableDeclaration(self, ctx:PascalParser.VariableDeclarationContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#variableDeclaration.
-    def exitVariableDeclaration(self, ctx:PascalParser.VariableDeclarationContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#procedureAndFunctionDeclarationPart.
-    def enterProcedureAndFunctionDeclarationPart(self, ctx:PascalParser.ProcedureAndFunctionDeclarationPartContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#procedureAndFunctionDeclarationPart.
-    def exitProcedureAndFunctionDeclarationPart(self, ctx:PascalParser.ProcedureAndFunctionDeclarationPartContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#procedureOrFunctionDeclaration.
-    def enterProcedureOrFunctionDeclaration(self, ctx:PascalParser.ProcedureOrFunctionDeclarationContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#procedureOrFunctionDeclaration.
-    def exitProcedureOrFunctionDeclaration(self, ctx:PascalParser.ProcedureOrFunctionDeclarationContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#procedureDeclaration.
-    def enterProcedureDeclaration(self, ctx:PascalParser.ProcedureDeclarationContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#procedureDeclaration.
-    def exitProcedureDeclaration(self, ctx:PascalParser.ProcedureDeclarationContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#formalParameterList.
-    def enterFormalParameterList(self, ctx:PascalParser.FormalParameterListContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#formalParameterList.
-    def exitFormalParameterList(self, ctx:PascalParser.FormalParameterListContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#formalParameterSection.
-    def enterFormalParameterSection(self, ctx:PascalParser.FormalParameterSectionContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#formalParameterSection.
-    def exitFormalParameterSection(self, ctx:PascalParser.FormalParameterSectionContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#parameterGroup.
-    def enterParameterGroup(self, ctx:PascalParser.ParameterGroupContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#parameterGroup.
-    def exitParameterGroup(self, ctx:PascalParser.ParameterGroupContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#identifierList.
-    def enterIdentifierList(self, ctx:PascalParser.IdentifierListContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#identifierList.
-    def exitIdentifierList(self, ctx:PascalParser.IdentifierListContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#constList.
-    def enterConstList(self, ctx:PascalParser.ConstListContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#constList.
-    def exitConstList(self, ctx:PascalParser.ConstListContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#functionDeclaration.
-    def enterFunctionDeclaration(self, ctx:PascalParser.FunctionDeclarationContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#functionDeclaration.
-    def exitFunctionDeclaration(self, ctx:PascalParser.FunctionDeclarationContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#resultType.
-    def enterResultType(self, ctx:PascalParser.ResultTypeContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#resultType.
-    def exitResultType(self, ctx:PascalParser.ResultTypeContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#statement.
-    def enterStatement(self, ctx:PascalParser.StatementContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#statement.
-    def exitStatement(self, ctx:PascalParser.StatementContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#unlabelledStatement.
-    def enterUnlabelledStatement(self, ctx:PascalParser.UnlabelledStatementContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#unlabelledStatement.
-    def exitUnlabelledStatement(self, ctx:PascalParser.UnlabelledStatementContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#simpleStatement.
-    def enterSimpleStatement(self, ctx:PascalParser.SimpleStatementContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#simpleStatement.
-    def exitSimpleStatement(self, ctx:PascalParser.SimpleStatementContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#assignmentStatement.
-    def enterAssignmentStatement(self, ctx:PascalParser.AssignmentStatementContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#assignmentStatement.
-    def exitAssignmentStatement(self, ctx:PascalParser.AssignmentStatementContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#variable.
-    def enterVariable(self, ctx:PascalParser.VariableContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#variable.
-    def exitVariable(self, ctx:PascalParser.VariableContext):
+    # Exit a parse tree produced by PascalParser#arg.
+    def exitArg(self, ctx:PascalParser.ArgContext):
         pass
 
 
@@ -557,12 +179,12 @@ class PascalListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by PascalParser#simpleExpression.
-    def enterSimpleExpression(self, ctx:PascalParser.SimpleExpressionContext):
+    # Enter a parse tree produced by PascalParser#simple_expression.
+    def enterSimple_expression(self, ctx:PascalParser.Simple_expressionContext):
         pass
 
-    # Exit a parse tree produced by PascalParser#simpleExpression.
-    def exitSimpleExpression(self, ctx:PascalParser.SimpleExpressionContext):
+    # Exit a parse tree produced by PascalParser#simple_expression.
+    def exitSimple_expression(self, ctx:PascalParser.Simple_expressionContext):
         pass
 
 
@@ -575,264 +197,30 @@ class PascalListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by PascalParser#signedFactor.
-    def enterSignedFactor(self, ctx:PascalParser.SignedFactorContext):
+    # Enter a parse tree produced by PascalParser#not_el.
+    def enterNot_el(self, ctx:PascalParser.Not_elContext):
         pass
 
-    # Exit a parse tree produced by PascalParser#signedFactor.
-    def exitSignedFactor(self, ctx:PascalParser.SignedFactorContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#factor.
-    def enterFactor(self, ctx:PascalParser.FactorContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#factor.
-    def exitFactor(self, ctx:PascalParser.FactorContext):
+    # Exit a parse tree produced by PascalParser#not_el.
+    def exitNot_el(self, ctx:PascalParser.Not_elContext):
         pass
 
 
-    # Enter a parse tree produced by PascalParser#unsignedConstant.
-    def enterUnsignedConstant(self, ctx:PascalParser.UnsignedConstantContext):
+    # Enter a parse tree produced by PascalParser#el.
+    def enterEl(self, ctx:PascalParser.ElContext):
         pass
 
-    # Exit a parse tree produced by PascalParser#unsignedConstant.
-    def exitUnsignedConstant(self, ctx:PascalParser.UnsignedConstantContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#functionDesignator.
-    def enterFunctionDesignator(self, ctx:PascalParser.FunctionDesignatorContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#functionDesignator.
-    def exitFunctionDesignator(self, ctx:PascalParser.FunctionDesignatorContext):
+    # Exit a parse tree produced by PascalParser#el.
+    def exitEl(self, ctx:PascalParser.ElContext):
         pass
 
 
-    # Enter a parse tree produced by PascalParser#parameterList.
-    def enterParameterList(self, ctx:PascalParser.ParameterListContext):
+    # Enter a parse tree produced by PascalParser#mb.
+    def enterMb(self, ctx:PascalParser.MbContext):
         pass
 
-    # Exit a parse tree produced by PascalParser#parameterList.
-    def exitParameterList(self, ctx:PascalParser.ParameterListContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#set_st.
-    def enterSet_st(self, ctx:PascalParser.Set_stContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#set_st.
-    def exitSet_st(self, ctx:PascalParser.Set_stContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#elementList.
-    def enterElementList(self, ctx:PascalParser.ElementListContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#elementList.
-    def exitElementList(self, ctx:PascalParser.ElementListContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#element.
-    def enterElement(self, ctx:PascalParser.ElementContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#element.
-    def exitElement(self, ctx:PascalParser.ElementContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#procedureStatement.
-    def enterProcedureStatement(self, ctx:PascalParser.ProcedureStatementContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#procedureStatement.
-    def exitProcedureStatement(self, ctx:PascalParser.ProcedureStatementContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#actualParameter.
-    def enterActualParameter(self, ctx:PascalParser.ActualParameterContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#actualParameter.
-    def exitActualParameter(self, ctx:PascalParser.ActualParameterContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#gotoStatement.
-    def enterGotoStatement(self, ctx:PascalParser.GotoStatementContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#gotoStatement.
-    def exitGotoStatement(self, ctx:PascalParser.GotoStatementContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#emptyStatement.
-    def enterEmptyStatement(self, ctx:PascalParser.EmptyStatementContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#emptyStatement.
-    def exitEmptyStatement(self, ctx:PascalParser.EmptyStatementContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#empty.
-    def enterEmpty(self, ctx:PascalParser.EmptyContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#empty.
-    def exitEmpty(self, ctx:PascalParser.EmptyContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#structuredStatement.
-    def enterStructuredStatement(self, ctx:PascalParser.StructuredStatementContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#structuredStatement.
-    def exitStructuredStatement(self, ctx:PascalParser.StructuredStatementContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#compoundStatement.
-    def enterCompoundStatement(self, ctx:PascalParser.CompoundStatementContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#compoundStatement.
-    def exitCompoundStatement(self, ctx:PascalParser.CompoundStatementContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#statements.
-    def enterStatements(self, ctx:PascalParser.StatementsContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#statements.
-    def exitStatements(self, ctx:PascalParser.StatementsContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#conditionalStatement.
-    def enterConditionalStatement(self, ctx:PascalParser.ConditionalStatementContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#conditionalStatement.
-    def exitConditionalStatement(self, ctx:PascalParser.ConditionalStatementContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#ifStatement.
-    def enterIfStatement(self, ctx:PascalParser.IfStatementContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#ifStatement.
-    def exitIfStatement(self, ctx:PascalParser.IfStatementContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#caseStatement.
-    def enterCaseStatement(self, ctx:PascalParser.CaseStatementContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#caseStatement.
-    def exitCaseStatement(self, ctx:PascalParser.CaseStatementContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#caseListElement.
-    def enterCaseListElement(self, ctx:PascalParser.CaseListElementContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#caseListElement.
-    def exitCaseListElement(self, ctx:PascalParser.CaseListElementContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#repetetiveStatement.
-    def enterRepetetiveStatement(self, ctx:PascalParser.RepetetiveStatementContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#repetetiveStatement.
-    def exitRepetetiveStatement(self, ctx:PascalParser.RepetetiveStatementContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#whileStatement.
-    def enterWhileStatement(self, ctx:PascalParser.WhileStatementContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#whileStatement.
-    def exitWhileStatement(self, ctx:PascalParser.WhileStatementContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#repeatStatement.
-    def enterRepeatStatement(self, ctx:PascalParser.RepeatStatementContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#repeatStatement.
-    def exitRepeatStatement(self, ctx:PascalParser.RepeatStatementContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#forStatement.
-    def enterForStatement(self, ctx:PascalParser.ForStatementContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#forStatement.
-    def exitForStatement(self, ctx:PascalParser.ForStatementContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#forList.
-    def enterForList(self, ctx:PascalParser.ForListContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#forList.
-    def exitForList(self, ctx:PascalParser.ForListContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#initialValue.
-    def enterInitialValue(self, ctx:PascalParser.InitialValueContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#initialValue.
-    def exitInitialValue(self, ctx:PascalParser.InitialValueContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#finalValue.
-    def enterFinalValue(self, ctx:PascalParser.FinalValueContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#finalValue.
-    def exitFinalValue(self, ctx:PascalParser.FinalValueContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#withStatement.
-    def enterWithStatement(self, ctx:PascalParser.WithStatementContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#withStatement.
-    def exitWithStatement(self, ctx:PascalParser.WithStatementContext):
-        pass
-
-
-    # Enter a parse tree produced by PascalParser#recordVariableList.
-    def enterRecordVariableList(self, ctx:PascalParser.RecordVariableListContext):
-        pass
-
-    # Exit a parse tree produced by PascalParser#recordVariableList.
-    def exitRecordVariableList(self, ctx:PascalParser.RecordVariableListContext):
+    # Exit a parse tree produced by PascalParser#mb.
+    def exitMb(self, ctx:PascalParser.MbContext):
         pass
 
 
