@@ -69,17 +69,18 @@ else:
 };
 
 body :
-     | 'begin' body 'end' ';' body
+     | 'begin' body 'end' mb body
      | simple_body mb
-     | simple_body ';' body
+     | simple_body mb body
      ;
       simple_body: assign
                  | b_for
                  | b_while
                  | call
                  | b_if
+                 | s_if
                  ;
-
+      s_if: 'if' expression 'then' body;
       b_if: 'if' expression 'then' body 'else' body;
       b_for: 'for' assign 'to' expression 'do' body;
       b_while: 'while' expression 'do' body;
@@ -127,6 +128,17 @@ if $ID.text not in self.procedures:
                         | 'not' el
                         ;
                         el: ID
+{
+map = {}
+if self.local:
+    map = self.localVars
+else:
+    map = self.globalVars
+if $ID.text in map:
+    self.lastType = map[$ID.text]
+else:
+    sys.stderr.write('Строка №'+str($ID.line)+': Необъявленный ID\n');
+}
                             | INTEGER {self.lastType = 'integer'}
                             | CHAR {self.lastType = 'character'}
                             | BOOL {self.lastType = 'boolean'}

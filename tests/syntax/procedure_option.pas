@@ -11,10 +11,11 @@ procedure double(i:integer; k:integer);
 
 begin
   i:=5;
+  k:=0;
 end;
 
 
 begin
-  {single(true);}
+  single(true);
   double(1,4);
 end.

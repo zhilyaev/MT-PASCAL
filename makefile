@@ -4,6 +4,7 @@ all:
 
 test:
 	python main.py tests/syntax/for-while_once.pas
+	python main.py tests/syntax/if.pas
 	python main.py tests/syntax/for-while.pas
 	python main.py tests/syntax/vars_decl.pas
 	python main.py tests/syntax/for_once.pas

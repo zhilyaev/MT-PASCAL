@@ -107,6 +107,15 @@ class PascalListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PascalParser#s_if.
+    def enterS_if(self, ctx:PascalParser.S_ifContext):
+        pass
+
+    # Exit a parse tree produced by PascalParser#s_if.
+    def exitS_if(self, ctx:PascalParser.S_ifContext):
+        pass
+
+
     # Enter a parse tree produced by PascalParser#b_if.
     def enterB_if(self, ctx:PascalParser.B_ifContext):
         pass
