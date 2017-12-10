@@ -5,16 +5,15 @@ from PascalParser import PascalParser
 from PascalListener import PascalListener
 
 
-
 def main():
-    input = FileStream('tests/true/k.pas')
+    input = FileStream(sys.argv[sys.argv.__len__()-1])  #
     lexer = PascalLexer(input)
     stream = CommonTokenStream(lexer)
     parser = PascalParser(stream)
     tree = parser.r()
-    # printer = MyListener()
-    # walker = ParseTreeWalker()
-    # walker.walk(printer, tree)
+    printer = PascalListener()
+    walker = ParseTreeWalker()
+    walker.walk(printer, tree)
 
 
 if __name__ == '__main__':

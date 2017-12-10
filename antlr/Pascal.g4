@@ -3,11 +3,13 @@ grammar Pascal;
 
 @members {
 globalVars = {}  # ID : TYPE
+procedures = {}
+local = False
+localVars = {}
 lastType = ''
 }
-
 r: program ;
-program : 'program ' ID mb
+program : 'program ' ID ';'
             decl
             'begin'
                 body
@@ -21,33 +23,57 @@ program : 'program ' ID mb
     vars_decl:
         | var_decl vars_decl
         ;
-        var_decl: 'var ' ID ':'  STD_TYPE_NAME mb
+        var_decl: 'var ' ID ':'  STD_TYPE_NAME ';'
 {
-if $ID.text not in self.globalVars:
-    self.globalVars[$ID.text] = $STD_TYPE_NAME.text
+map = {}
+if self.local:
+    map = self.localVars
 else:
-    sys.stderr.write('Строка №'+str($ID.line)+': Палехче ID='+$ID.text+' уже исползуется\n');
+    map = self.globalVars
+
+if ($ID.text not in map):
+    map[$ID.text] = $STD_TYPE_NAME.text
+else:
+    sys.stderr.write('Строка №'+str($ID.line)+': ID='+$ID.text+' не объявлен\n');
 };
 
-    procedure_decl: 'procedure ' ID '(' args_decl ')' mb
+    procedure_decl:
+{
+self.local = True
+}
+                    'procedure ' ID '(' arg_list_decl ')' ';'
                     vars_decl
                     'begin'
                         body
-                    'end' mb
+                    'end' ';'
 {
-self.globalVars[$ID.text] = 'VOID'
+if ($ID.text not in self.globalVars) and ($ID.text not in self.procedures):
+    self.procedures[$ID.text] = $ID.line
+else:
+    sys.stderr.write('Строка №'+str($ID.line)+': Палехче ID='+$ID.text+' уже исползуется\n');
+
+self.localVars.clear()
+self.local = False
 };
-    args_decl:
-        | arg_decl args_decl
-        ;
-        arg_decl: ID ':' STD_TYPE_NAME
-        ;
+arg_list_decl:
+    | arg_decl
+    | arg_decl mult_arg_decl
+    ;
+    mult_arg_decl: ';' arg_list_decl;
+    arg_decl: ID ':' STD_TYPE_NAME
+{
+if $ID.text not in self.localVars:
+    self.localVars[$ID.text] = $STD_TYPE_NAME.text
+else:
+    sys.stderr.write('Строка №'+str($ID.line)+': Аргумент ID='+$ID.text+' уже исползуется\n');
+};
 
 body :
-     | 'begin' body 'end' mb
-     | simple_body
+     | 'begin' body 'end' ';' body
+     | simple_body mb
+     | simple_body ';' body
      ;
-      simple_body: assign body
+      simple_body: assign
                  | b_for
                  | b_while
                  | call
@@ -58,19 +84,34 @@ body :
       b_for: 'for' assign 'to' expression 'do' body;
       b_while: 'while' expression 'do' body;
 
-assign : ID ':=' expression mb
+assign : ID ':=' expression
 {
-if $ID.text in self.globalVars:
-    if (self.globalVars[$ID.text] != self.lastType):
-        sys.stderr.write('Строка №'+str($ID.line)+': Неверный тип '+$ID.text+'\n')
+map = {}
+if self.local:
+    map = self.localVars
+else:
+    map = self.globalVars
+
+if $ID.text in map:
+    if map[$ID.text] != self.lastType:
+        sys.stderr.write('Строка №'+str($ID.line)+': Неверный тип ID='+$ID.text+' '+map[$ID.text]+' => '+ self.lastType +'\n')
+
 else:
     sys.stderr.write('Строка №'+str($ID.line)+': Необъявленный ID='+$ID.text+'\n');
+
+self.lastType = ''
 };
-call: ID '(' args_list ')' mb;
-    args_list: arg args;
-             args:
-             |',' arg args
-             ;
+call: ID '(' arg_list ')'
+{
+if $ID.text not in self.procedures:
+    sys.stderr.write('Строка №'+str($ID.line)+': Необъявленная Процедура\n');
+};
+    arg_list:
+            |arg args
+            ;
+            args:
+            | ',' arg args
+            ;
              arg: expression;
 
       expression: simple_expression

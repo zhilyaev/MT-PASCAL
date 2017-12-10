@@ -62,12 +62,21 @@ class PascalListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by PascalParser#args_decl.
-    def enterArgs_decl(self, ctx:PascalParser.Args_declContext):
+    # Enter a parse tree produced by PascalParser#arg_list_decl.
+    def enterArg_list_decl(self, ctx:PascalParser.Arg_list_declContext):
         pass
 
-    # Exit a parse tree produced by PascalParser#args_decl.
-    def exitArgs_decl(self, ctx:PascalParser.Args_declContext):
+    # Exit a parse tree produced by PascalParser#arg_list_decl.
+    def exitArg_list_decl(self, ctx:PascalParser.Arg_list_declContext):
+        pass
+
+
+    # Enter a parse tree produced by PascalParser#mult_arg_decl.
+    def enterMult_arg_decl(self, ctx:PascalParser.Mult_arg_declContext):
+        pass
+
+    # Exit a parse tree produced by PascalParser#mult_arg_decl.
+    def exitMult_arg_decl(self, ctx:PascalParser.Mult_arg_declContext):
         pass
 
 
@@ -143,12 +152,12 @@ class PascalListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by PascalParser#args_list.
-    def enterArgs_list(self, ctx:PascalParser.Args_listContext):
+    # Enter a parse tree produced by PascalParser#arg_list.
+    def enterArg_list(self, ctx:PascalParser.Arg_listContext):
         pass
 
-    # Exit a parse tree produced by PascalParser#args_list.
-    def exitArgs_list(self, ctx:PascalParser.Args_listContext):
+    # Exit a parse tree produced by PascalParser#arg_list.
+    def exitArg_list(self, ctx:PascalParser.Arg_listContext):
         pass
 
 

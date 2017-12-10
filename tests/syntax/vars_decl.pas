@@ -1,6 +1,6 @@
 program myTest_var;
 var i: integer;
-var z: char;
+var z: real;
 begin
-    i:= 'c';
+    i:= 1;
 end.
