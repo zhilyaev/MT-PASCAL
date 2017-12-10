@@ -9,7 +9,7 @@ localVars = {}
 lastType = ''
 }
 r: program ;
-program : 'program ' ID ';'
+program : 'program ' ID mb
             decl
             'begin'
                 body
@@ -34,14 +34,14 @@ else:
 if ($ID.text not in map):
     map[$ID.text] = $STD_TYPE_NAME.text
 else:
-    sys.stderr.write('Строка №'+str($ID.line)+': ID='+$ID.text+' не объявлен\n');
+    sys.stderr.write('Строка №'+str($ID.line)+': ID='+$ID.text+' объявлен повторно\n');
 };
 
     procedure_decl:
 {
 self.local = True
 }
-                    'procedure ' ID '(' arg_list_decl ')' ';'
+                    'procedure ' ID '(' arg_list_decl ')' mb
                     vars_decl
                     'begin'
                         body

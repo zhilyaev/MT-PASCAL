@@ -11,5 +11,7 @@ test:
 	python main.py tests/syntax/comments.pas
 	python main.py tests/syntax/procedure_single.pas
 	python main.py tests/syntax/procedure_option.pas
+	python main.py tests/logic/k.pas
+	python main.py tests/logic/procedures.pas
 
 clean: rm -f Pascal*.*
