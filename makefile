@@ -3,6 +3,7 @@ all:
 	antlr4 -Dlanguage=Python3 antlr/Pascal.g4
 
 test:
+	python main.py tests/logic/vars.pas
 	python main.py tests/syntax/for-while_once.pas
 	python main.py tests/syntax/if.pas
 	python main.py tests/syntax/for-while.pas
