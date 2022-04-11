@@ -1,4 +1,4 @@
-// © zhiylaev@github.com
+// © Dmitrii Zhiliaev
 grammar Pascal;
 
 @members {
